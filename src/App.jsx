@@ -11,8 +11,8 @@ const App = () => {
     <Router>
       <Switch>
         <Route exact path="/build" component={Bot} />
-        <Route exact path="/bot" component={InitalBotcreator} />
-        <Route exact path="/" component={MainPage} />
+        <Route exact path="/bot" component={MainPage} />
+        <Route exact path="/" component={InitalBotcreator} />
       </Switch>
     </Router>
   );

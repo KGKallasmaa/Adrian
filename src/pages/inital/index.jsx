@@ -27,16 +27,14 @@ export class InitalBotcreator extends React.Component {
     const { name, welcome_message } = this.state;
     //TODO: what should we do with the info?
     //Currently redirecting to the main page
-    window.location.href = '/';
+    window.location.href = '/bot';
   }
 
   render() {
     const name = this.state.name;
     return (
       <React.Fragment>
-        <Helmet>
-          <title>Welcome to Adrian</title>
-        </Helmet>
+        <Helmet title={'Welcome to Adrian'} />
         <div className="limiter">
           <div className="container-login100">
             <div className="wrap-login100">
@@ -67,7 +65,7 @@ export class InitalBotcreator extends React.Component {
                   <div className="wrap-login100-form-btn">
                     <div className="login100-form-bgbtn" />
                     <button className="login100-form-btn" onClick={this.handleClick}>
-                      Create bot
+                      Continue
                     </button>
                   </div>
                 </div>
