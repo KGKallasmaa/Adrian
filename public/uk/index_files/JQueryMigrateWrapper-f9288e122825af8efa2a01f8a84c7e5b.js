@@ -1,0 +1,1 @@
+define(["jquerySrc","jquerymigrate"],function(e){"use strict";return console.log("jQuery.migrateVersion",e.migrateVersion,"jQuery.fn.jquery",e.fn.jquery),e});

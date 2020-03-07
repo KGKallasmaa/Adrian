@@ -1,0 +1,1 @@
+define(["module"],function(e){"use strict";return e.config()});
