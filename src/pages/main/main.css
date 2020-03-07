@@ -1,0 +1,6 @@
+.colContentWrapper {
+    background: aliceblue;
+    padding: 10px 15px;
+    flex: 1;
+    height: 100%;
+}
