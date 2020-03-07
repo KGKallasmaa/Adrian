@@ -1,24 +1,35 @@
 import React  from 'react';
+import { connect } from 'react-redux';
+
+import { addChunkToList } from '../../reducers/chunks.reducer'
+
+import './AddTobacklogButton.css'
+
 import { Editor } from 'react-draft-wysiwyg';
 import getFragmentFromSelection from 'draft-js/lib/getFragmentFromSelection';
 
 
-export class AddToBacklogButton extends React.Component {
+// actions
 
-  addStar = () => {
-    const { editorState } = this.props;
+
+class AddToBacklogButtonClass extends React.Component {
+
+  addChunk = () => {
+    const { editorState, addChunkToList } = this.props;
 
     const selectedText = getFragmentFromSelection(editorState);
 
-
-    console.log(selectedText ? selectedText.map(x => x.getText()).join('\n') : '')
+    if (selectedText) {
+      const text = selectedText.map(x => x.getText()).join('\n');
+      addChunkToList(text)
+    }
   };
 
   render() {
     return (
-      <button onClick={this.addStar}>Add To Log</button>
+      <button className={'btn btn-primary'} onClick={this.addChunk}>Add To Log</button>
     );
   }
 }
 
-export default AddToBacklogButton;
+export const AddToBacklogButton = connect(null, {addChunkToList})(AddToBacklogButtonClass);
