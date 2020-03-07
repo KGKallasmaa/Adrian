@@ -12,9 +12,11 @@ export default class MasterChunk extends Component {
         { title: 'Title two', children: [{ title: 'sub 2' }] },
       ],
     };
-    navigator.clipboard.readText().then((text) => {
-      alert(text);
-    });
+    navigator.clipboard.readText()
+      .then(text => {
+        alert(text)
+      })
+
   }
 
   render() {
