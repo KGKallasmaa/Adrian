@@ -5,7 +5,6 @@ import { addChunkToList } from '../../reducers/chunks.reducer'
 
 import './AddTobacklogButton.css'
 
-import { Editor } from 'react-draft-wysiwyg';
 import getFragmentFromSelection from 'draft-js/lib/getFragmentFromSelection';
 
 
