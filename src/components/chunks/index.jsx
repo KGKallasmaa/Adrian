@@ -13,7 +13,7 @@ export default class MasterChunk extends Component {
     } else {
       this.state = {
         treeData: [
-          { title: 'QQQQQQQQQQASDASDA', children: [{ title: 'fake sub 1' }, { title: 'fake sub 2' }] },
+          { title: 'Let me be col', children: [{ title: 'fake sub 1' }, { title: 'fake sub 2' }] },
           { title: 'fQQQQQQSFAHSFOASHIOHASIOD', children: [{ title: 'fake sub 3' }] },
         ],
       };
