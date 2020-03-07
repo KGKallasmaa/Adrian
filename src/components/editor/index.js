@@ -6,7 +6,6 @@ import { AddToBacklogButton } from "../../components/editor/AddTobacklogButton.j
 import Iframe from 'react-iframe';
 
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-import UploadPDFButton from './UploadPDFButton';
 
 
 class ControlledEditor extends React.Component {
@@ -42,7 +41,7 @@ class ControlledEditor extends React.Component {
         wrapperClassName="demo-wrapper"
         editorClassName="demo-editor"
         onEditorStateChange={this.onEditorStateChange}
-        toolbarCustomButtons={[<AddToBacklogButton/>,<UploadPDFButton/>]}
+        toolbarCustomButtons={[<AddToBacklogButton/>]}
         toolbar={{options: []}}
       />
         <Iframe url="https://medium.com/@jeffreypbezos/no-thank-you-mr-pecker-146e3922310f"
