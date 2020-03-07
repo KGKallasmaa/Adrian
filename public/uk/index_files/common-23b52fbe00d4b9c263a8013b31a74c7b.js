@@ -1,0 +1,1 @@
+define(["jquery","globals","pubsub","log","i18n"],function(a,t,e,i,n){"use strict";var r=a.extend({},t,e,i);return window.dataLayer=window.dataLayer||[],r.text=n,r.subscribe("analytics:trigger",function(a,t){r.log("mas_analytics.triggerAnalytics",t),window.dataLayer.push(t)}),r});

@@ -49,7 +49,25 @@ export class InitalBotcreator extends React.Component {
                     type="text"
                     name="name"
                     onChange={this.handleChange}
-                    placeholder={'Name'}
+                    placeholder={'Name your Bot'}
+                  />
+                </div>
+                <div className="wrap-input100 validate-input">
+                  <input
+                    className="input100"
+                    type="text"
+                    name="name"
+                    onChange={this.handleChange}
+                    placeholder={'Who are your customers?'}
+                  />
+                </div>
+                <div className="wrap-input100 validate-input">
+                  <textarea
+                    className="input100"
+                    type="text"
+                    name="name"
+                    onChange={this.handleChange}
+                    placeholder={'What should your customers do or feel after conversation?'}
                   />
                 </div>
                 <div className="wrap-input100 validate-input">
@@ -58,7 +76,7 @@ export class InitalBotcreator extends React.Component {
                     type="text"
                     name="welcome_message"
                     onChange={this.handleChange}
-                    placeholder={'Welcoming message'}
+                    placeholder={'What\'s your welcoming message?'}
                   />
                 </div>
                 <div className="container-login100-form-btn">

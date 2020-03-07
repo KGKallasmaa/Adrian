@@ -1,7 +1,7 @@
 import React from 'react';
 import './main.css';
 import AdrianEditor from '../../components/editor';
-import MasterChunk from '../../components/chunks';
+import MasterChunk from '../../components/chunks/index';
 import 'antd/dist/antd.css';
 
 import { Button, Layout, Menu } from 'antd';
@@ -18,25 +18,19 @@ export class MainPage extends React.Component {
     super(props);
     this.state = {
       treeData: null,
-      loading:false,
-      loading_fix:false
+      loading:false
     };
     this.fixStuff = this.fixStuff.bind(this);
     this.goToBotBuilder = this.goToBotBuilder.bind(this);
   }
-  async fixStuff(e) {
+  fixStuff(e) {
     e.preventDefault();
-    this.setState({
-      loading_fix: true
-    });
     const new_data = [
       { title: 'Please let me be', children: [{ title: 'fake sub 1' }, { title: 'fake sub 2' }] },
       { title: 'part of Superangel    :)', children: [{ title: 'fake sub 3' }] },
     ];
-    await sleep(2000);
     this.setState({
-      treeData: new_data,
-      loading_fix: false
+     treeData:new_data,
     });
   }
   async goToBotBuilder(e) {
@@ -73,8 +67,8 @@ export class MainPage extends React.Component {
                   <div className="row">
                   </div>
                   <div className="row">
-                    <div className="col-md-6" style={{borderColor:"red",borderStyle:"solid"}}>
-                      <h3>Source</h3>
+                    <div className="col-md-6" style={{borderRight: '4px solid #001529', paddingRight: 36}}>
+                      <h3>Source Material</h3>
                       <div className="row">
                         <div className="col-md-12">
                           <AdrianEditor/>
@@ -82,18 +76,18 @@ export class MainPage extends React.Component {
                       </div>
                     </div>
                     <div className="col-md-6">
-                      <h3>Chunks</h3>
+                      <h3>Bot Builder</h3>
                       <div className="row">
                         <div className="col-md-12">
-                          <MasterChunk data={treeData}/>
+                          <MasterChunk realdata={treeData}/>
                         </div>
                       </div>
-                      <div className="row">
+                      <div className="row" style={{marginTop: 50}}>
                         <div className="col-md-6">
                           <Button  style={{"background-color": "#FDC000",
                             "color":"black",
-                            "border-color":"#FDC000"}} className="btn btn-success btn-block"   loading={this.state.loading_fix} onClick={this.fixStuff}>
-                            Fix my stuff
+                            "border-color":"#FDC000"}} className="btn btn-success btn-block"  onClick={this.fixStuff}>
+                            Persuadr™ Check
                           </Button>
 
                         </div>

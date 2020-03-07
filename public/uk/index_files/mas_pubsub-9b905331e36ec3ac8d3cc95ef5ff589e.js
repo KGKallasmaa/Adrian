@@ -1,0 +1,1 @@
+define(["jquery"],function(n){"use strict";var u={},i=n({});return u.subscribe=function(){i.on.apply(i,arguments)},u.unsubscribe=function(){i.off.apply(i,arguments)},u.publish=function(){i.trigger.apply(i,arguments)},u});

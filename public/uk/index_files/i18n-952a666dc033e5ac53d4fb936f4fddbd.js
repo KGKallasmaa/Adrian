@@ -1,0 +1,1 @@
+define(["i18nTokens"],function(n){"use strict";return n});
