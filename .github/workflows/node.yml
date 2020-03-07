@@ -31,11 +31,6 @@ jobs:
       - name: Installing frontend dependencies
         run: |
           npm ci
-      - name: Testing frontend
-        run: |
-          npm run test --if-present
-        env:
-          CI: true
       - name: Building frontend
         run: |
           npm run build --if-present
