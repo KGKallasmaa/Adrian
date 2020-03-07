@@ -17,17 +17,6 @@ export default class MasterChunk extends Component {
           { title: 'fQQQQQQSFAHSFOASHIOHASIOD', children: [{ title: 'fake sub 3' }] },
         ],
       };
-      /*
-      ALREADY HAVE
-​
-
-
-[An innovative finance ISA (IFISA) lets you use your tax free ISA allowance while investing in peer to peer (P2P) lending.
-
-[The Lifetime ISA is a longer-term tax-free savings account that will let you save up to £4,000 per year and get a government bonus of 25% (up to £1,000).]
-
-You pay no Income Tax on the interest or dividends you receive from an ISA and any profits from investments are free of Capital Gains Tax.
-       */
     }
 
     this.handleChange = this.handleChange.bind(this);

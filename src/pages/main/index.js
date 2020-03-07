@@ -6,7 +6,7 @@ import 'antd/dist/antd.css';
 
 import { Button, Layout, Menu } from 'antd';
 import { Helmet } from 'react-helmet';
-import logo from '../inital/assets/images/logo.png';
+
 
 const sleep = (milliseconds) => {
   return new Promise(resolve => setTimeout(resolve, milliseconds))
@@ -38,7 +38,6 @@ export class MainPage extends React.Component {
     this.setState({
       loading: true
     });
-
     await sleep(3000);
     window.location.href = '/build';
   }
@@ -49,6 +48,7 @@ export class MainPage extends React.Component {
     return (
       <React.Fragment>
         <br/>
+        <Helmet title={"Bot builder page"}/>
         <Layout>
           <Header className="header">
             <div className="logo" />
