@@ -20,6 +20,7 @@ export class MainPage extends React.Component {
       treeData: null,
       loading: false,
       visible: false,
+      visible_fix_text: false,
     };
     this.fixStuff = this.fixStuff.bind(this);
     this.goToBotBuilder = this.goToBotBuilder.bind(this);
@@ -52,6 +53,15 @@ export class MainPage extends React.Component {
       visible: true,
     });
   };
+  handleEditText = () => {
+   //TODO: this button does nothing
+  };
+
+  showFixText = () => {
+    this.setState({
+      visible_fix_text: true,
+    });
+  };
 
   handleCrowedSource = () => {
     //TODO: no functionality
@@ -60,10 +70,13 @@ export class MainPage extends React.Component {
   handleCancel = () => {
     this.setState({ visible: false });
   };
+  handleFixTextCancel = () => {
+    this.setState({ visible_fix_text: false });
+  };
 
   render() {
     const { treeData } = this.state;
-    const { visible, loading } = this.state;
+    const { visible, loading, visible_fix_text } = this.state;
 
     return (
       <React.Fragment>
@@ -98,12 +111,37 @@ export class MainPage extends React.Component {
                       <div className="row" style={{ marginTop: 50 }}>
                         <div className="col-md-6">
                           <Button
+                            type="primary"
                             style={{ 'background-color': '#FDC000', color: 'black', 'border-color': '#FDC000' }}
                             className="btn btn-success btn-block"
-                            onClick={this.fixStuff}
+                            onClick={this.showFixText}
                           >
                             Persuadr™ Check
                           </Button>
+                          <Modal
+                            visible={visible_fix_text}
+                            title="Persuadr Check"
+                            onOk={this.handleEditText}
+                            onCancel={this.handleFixTextCancel}
+                            footer={[
+                              <Button key="back" type="dashed" danger onClick={this.handleFixTextCancel}>
+                                Cancel
+                              </Button>,
+                              <Button
+                                key="submit"
+                                type="primary"
+                                style={{ 'background-color': '#FDC000', color: 'black', 'border-color': '#FDC000' }}
+                                onClick={this.handleEditText}
+                              >
+                                Edit
+                              </Button>,
+                            ]}
+                          >
+                            <p style={{"color":"black"}}>1 Issue(s) Found</p><br/>
+                            <p style={{"color":"red"}}>“Paying off debt is good”</p><br/>
+                            <p>This phrase has a low arousal value. Consider rephrasing.</p>
+                            <br/>
+                          </Modal>
                         </div>
                         <div className="col-md-6">
                           <Button
@@ -126,8 +164,9 @@ export class MainPage extends React.Component {
                               <Button
                                 key="submit"
                                 type="primary"
+                                loading={loading}
                                 style={{ 'background-color': '#FDC000', color: 'black', 'border-color': '#FDC000' }}
-                                onClick={this.handleCrowedSource}
+                                onClick={this.goToBotBuilder}
                               >
                                 No thanks, I’ll keep it basic!
                               </Button>,
@@ -135,8 +174,8 @@ export class MainPage extends React.Component {
                                 key="submit"
                                 type="primary"
                                 style={{ 'background-color': '#31D287', 'border-color': '#31D287' }}
-                                loading={loading}
-                                onClick={this.goToBotBuilder}
+
+                                onClick={this.handleCrowedSource}
                               >
                                 OK, let’s do this!
                               </Button>,
