@@ -4,7 +4,8 @@ import AdrianEditor from '../../components/editor';
 import MasterChunk from '../../components/chunks/index';
 import 'antd/dist/antd.css';
 
-import { Button, Layout, Menu } from 'antd';
+import { Button, Layout, Menu, Modal } from 'antd';
+
 import { Helmet } from 'react-helmet';
 
 const sleep = (milliseconds) => {
@@ -18,9 +19,13 @@ export class MainPage extends React.Component {
     this.state = {
       treeData: null,
       loading: false,
+      visible: false,
     };
     this.fixStuff = this.fixStuff.bind(this);
     this.goToBotBuilder = this.goToBotBuilder.bind(this);
+    this.showModal = this.showModal.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
+    this.handleCrowedSource = this.handleCrowedSource.bind(this);
   }
   fixStuff(e) {
     e.preventDefault();
@@ -41,8 +46,24 @@ export class MainPage extends React.Component {
     window.location.href = 'https://chatbothackathon.s3.eu-west-2.amazonaws.com/index.html';
   }
 
+  showModal = () => {
+    this.setState({
+      visible: true,
+    });
+  };
+
+  handleCrowedSource = () => {
+    //TODO: no functionality
+  };
+
+  handleCancel = () => {
+    this.setState({ visible: false });
+  };
+
   render() {
     const { treeData } = this.state;
+    const { visible, loading } = this.state;
+
     return (
       <React.Fragment>
         <br />
@@ -50,13 +71,13 @@ export class MainPage extends React.Component {
         <Layout>
           <Header className="header">
             <div className="logo" />
-            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']} style={{ lineHeight: '64px' }}></Menu>
+            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']} style={{ lineHeight: '64px' }} />
           </Header>
           <Content style={{ padding: '0 50px' }}>
             <Layout className="site-layout-background" style={{ padding: '24px 0' }}>
               <Content style={{ padding: '0 24px', minHeight: 280 }}>
                 <div className="container-fluid">
-                  <div className="row"></div>
+                  <div className="row" />
                   <div className="row">
                     <div className="col-md-6" style={{ borderRight: '4px solid #001529', paddingRight: 36 }}>
                       <h3>Source Material</h3>
@@ -88,11 +109,57 @@ export class MainPage extends React.Component {
                             type="primary"
                             style={{ 'background-color': '#31D287', 'border-color': '#31D287' }}
                             className="btn btn-success btn-block"
-                            loading={this.state.loading}
-                            onClick={this.goToBotBuilder}
+                            onClick={this.showModal}
                           >
                             Build my Bot
                           </Button>
+                          <Modal
+                            visible={visible}
+                            title="ALMOST THERE!"
+                            onOk={this.goToBotBuilder}
+                            onCancel={this.handleCancel}
+                            footer={[
+                              <Button key="back" type="dashed" danger onClick={this.handleCancel}>
+                                Cancel
+                              </Button>,
+                              <Button
+                                key="submit"
+                                type="primary"
+                                style={{ 'background-color': '#FDC000', color: 'black', 'border-color': '#FDC000' }}
+                                onClick={this.handleCrowedSource}
+                              >
+                                No thanks, I’ll keep it basic!
+                              </Button>,
+                              <Button
+                                key="submit"
+                                type="primary"
+                                style={{ 'background-color': '#31D287', 'border-color': '#31D287' }}
+                                loading={loading}
+                                onClick={this.goToBotBuilder}
+                              >
+                                OK, let’s do this!
+                              </Button>,
+                            ]}
+                          >
+                            <p>Before you publish your Bot Adrian, we can:</p>
+                            <br />
+                            <p>💓 Help you validate it with real customers</p>
+                            <br />
+                            <p>👪 Provide rich customer sentiment analytics</p>
+                            <br />
+                            <p>
+                              💬 Supercharge your Bot with the ability to tailor the way it speaks to different
+                              customers
+                            </p>
+                            <br />
+                            <p>
+                              This is part of the PersuadrTM Premium subscription and powered by 6 years of research
+                              into AI and Behavioural science.
+                            </p>
+                            <br />
+                            <p>Are you ready to supercharge Adrian?</p>
+                            <br />
+                          </Modal>
                         </div>
                       </div>
                     </div>
