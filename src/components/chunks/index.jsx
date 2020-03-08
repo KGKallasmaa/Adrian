@@ -8,7 +8,6 @@ import 'react-sortable-tree/style.css';
 class MasterChunk extends Component {
   constructor(props) {
     super(props);
-
     if (props.data) {
       this.state = {
         treeData: props.data,
@@ -19,7 +18,6 @@ class MasterChunk extends Component {
   }
 
   handleChange(e) {
-    console.log(e);
     e.preventDefault();
     const { name, value } = e.target;
     this.setState({

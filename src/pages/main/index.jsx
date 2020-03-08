@@ -22,21 +22,10 @@ export class MainPage extends React.Component {
       visible: false,
       visible_fix_text: false,
     };
-    this.fixStuff = this.fixStuff.bind(this);
     this.goToBotBuilder = this.goToBotBuilder.bind(this);
     this.showModal = this.showModal.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     this.handleCrowedSource = this.handleCrowedSource.bind(this);
-  }
-  fixStuff(e) {
-    e.preventDefault();
-    const new_data = [
-      { title: 'Please let me be', children: [{ title: 'fake sub 1' }, { title: 'fake sub 2' }] },
-      { title: 'part of Superangel    :)', children: [{ title: 'fake sub 3' }] },
-    ];
-    this.setState({
-      treeData: new_data,
-    });
   }
   async goToBotBuilder(e) {
     e.preventDefault();
@@ -44,7 +33,6 @@ export class MainPage extends React.Component {
       loading: true,
     });
     await sleep(3000);
-    //  window.location.href = 'https://chatbothackathon.s3.eu-west-2.amazonaws.com/index.html';
     window.location.href = '/script';
   }
 
@@ -54,7 +42,7 @@ export class MainPage extends React.Component {
     });
   };
   handleEditText = () => {
-   //TODO: this button does nothing
+    //TODO: this button does nothing
   };
 
   showFixText = () => {
@@ -77,6 +65,105 @@ export class MainPage extends React.Component {
   render() {
     const { treeData } = this.state;
     const { visible, loading, visible_fix_text } = this.state;
+
+    const persuader_button = () => {
+      return (
+        <div className="col-md-6">
+          <Button
+            type="primary"
+            style={{ 'background-color': '#FDC000', color: 'black', 'border-color': '#FDC000' }}
+            className="btn btn-success btn-block"
+            onClick={this.showFixText}
+          >
+            Persuadr™ Check
+          </Button>
+          <Modal
+            visible={visible_fix_text}
+            title="Persuadr Check"
+            onOk={this.handleEditText}
+            onCancel={this.handleFixTextCancel}
+            footer={[
+              <Button key="back" type="dashed" danger onClick={this.handleFixTextCancel}>
+                Cancel
+              </Button>,
+              <Button
+                key="submit"
+                type="primary"
+                style={{ 'background-color': '#FDC000', color: 'black', 'border-color': '#FDC000' }}
+                onClick={this.handleEditText}
+              >
+                Edit
+              </Button>,
+            ]}
+          >
+            <p style={{ color: 'black' }}>1 Issue(s) Found</p>
+            <br />
+            <p style={{ color: 'red' }}>“Paying off debt is good”</p>
+            <br />
+            <p>This phrase has a low arousal value. Consider rephrasing.</p>
+            <br />
+          </Modal>
+        </div>
+      );
+    };
+    const bot_button = () => {
+      return (
+        <div className="col-md-6">
+          <Button
+            type="primary"
+            style={{ 'background-color': '#31D287', 'border-color': '#31D287' }}
+            className="btn btn-success btn-block"
+            onClick={this.showModal}
+          >
+            Build my Bot
+          </Button>
+          <Modal
+            visible={visible}
+            title="ALMOST THERE!"
+            onOk={this.goToBotBuilder}
+            onCancel={this.handleCancel}
+            footer={[
+              <Button key="back" type="dashed" danger onClick={this.handleCancel}>
+                Cancel
+              </Button>,
+              <Button
+                key="submit"
+                type="primary"
+                loading={loading}
+                style={{ 'background-color': '#FDC000', color: 'black', 'border-color': '#FDC000' }}
+                onClick={this.goToBotBuilder}
+              >
+                No thanks, I’ll keep it basic!
+              </Button>,
+              <Button
+                key="submit"
+                type="primary"
+                style={{ 'background-color': '#31D287', 'border-color': '#31D287' }}
+                onClick={this.handleCrowedSource}
+              >
+                OK, let’s do this!
+              </Button>,
+            ]}
+          >
+            <p>Before you publish your Bot Adrian, we can:</p>
+            <br />
+            <p>💓 Help you validate it with real customers</p>
+            <br />
+            <p>👪 Provide rich customer sentiment analytics</p>
+            <br />
+            <p>💬 Supercharge your Bot with the ability to tailor the way it speaks to different customers</p>
+            <br />
+            <p>
+              This is part of the Persuadr™ Premium subscription and powered by 6 years of research into AI and
+              Behavioural science.
+            </p>
+            <br />
+            <p>Are you ready to supercharge Adrian?</p>
+            <br />
+          </Modal>
+        </div>
+      );
+    };
 
     return (
       <React.Fragment>
@@ -109,98 +196,8 @@ export class MainPage extends React.Component {
                         </div>
                       </div>
                       <div className="row" style={{ marginTop: 50 }}>
-                        <div className="col-md-6">
-                          <Button
-                            type="primary"
-                            style={{ 'background-color': '#FDC000', color: 'black', 'border-color': '#FDC000' }}
-                            className="btn btn-success btn-block"
-                            onClick={this.showFixText}
-                          >
-                            Persuadr™ Check
-                          </Button>
-                          <Modal
-                            visible={visible_fix_text}
-                            title="Persuadr Check"
-                            onOk={this.handleEditText}
-                            onCancel={this.handleFixTextCancel}
-                            footer={[
-                              <Button key="back" type="dashed" danger onClick={this.handleFixTextCancel}>
-                                Cancel
-                              </Button>,
-                              <Button
-                                key="submit"
-                                type="primary"
-                                style={{ 'background-color': '#FDC000', color: 'black', 'border-color': '#FDC000' }}
-                                onClick={this.handleEditText}
-                              >
-                                Edit
-                              </Button>,
-                            ]}
-                          >
-                            <p style={{"color":"black"}}>1 Issue(s) Found</p><br/>
-                            <p style={{"color":"red"}}>“Paying off debt is good”</p><br/>
-                            <p>This phrase has a low arousal value. Consider rephrasing.</p>
-                            <br/>
-                          </Modal>
-                        </div>
-                        <div className="col-md-6">
-                          <Button
-                            type="primary"
-                            style={{ 'background-color': '#31D287', 'border-color': '#31D287' }}
-                            className="btn btn-success btn-block"
-                            onClick={this.showModal}
-                          >
-                            Build my Bot
-                          </Button>
-                          <Modal
-                            visible={visible}
-                            title="ALMOST THERE!"
-                            onOk={this.goToBotBuilder}
-                            onCancel={this.handleCancel}
-                            footer={[
-                              <Button key="back" type="dashed" danger onClick={this.handleCancel}>
-                                Cancel
-                              </Button>,
-                              <Button
-                                key="submit"
-                                type="primary"
-                                loading={loading}
-                                style={{ 'background-color': '#FDC000', color: 'black', 'border-color': '#FDC000' }}
-                                onClick={this.goToBotBuilder}
-                              >
-                                No thanks, I’ll keep it basic!
-                              </Button>,
-                              <Button
-                                key="submit"
-                                type="primary"
-                                style={{ 'background-color': '#31D287', 'border-color': '#31D287' }}
-
-                                onClick={this.handleCrowedSource}
-                              >
-                                OK, let’s do this!
-                              </Button>,
-                            ]}
-                          >
-                            <p>Before you publish your Bot Adrian, we can:</p>
-                            <br />
-                            <p>💓 Help you validate it with real customers</p>
-                            <br />
-                            <p>👪 Provide rich customer sentiment analytics</p>
-                            <br />
-                            <p>
-                              💬 Supercharge your Bot with the ability to tailor the way it speaks to different
-                              customers
-                            </p>
-                            <br />
-                            <p>
-                              This is part of the Persuadr™ Premium subscription and powered by 6 years of research into
-                              AI and Behavioural science.
-                            </p>
-                            <br />
-                            <p>Are you ready to supercharge Adrian?</p>
-                            <br />
-                          </Modal>
-                        </div>
+                        {persuader_button()}
+                        {bot_button()}
                       </div>
                     </div>
                   </div>

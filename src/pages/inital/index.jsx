@@ -12,7 +12,7 @@ export class InitalBotcreator extends React.Component {
     this.state = {
       name: 'Adrian',
       welcome_message: '',
-      how_feel: ''
+      how_feel: '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
