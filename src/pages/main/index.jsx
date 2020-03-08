@@ -43,7 +43,8 @@ export class MainPage extends React.Component {
       loading: true,
     });
     await sleep(3000);
-    window.location.href = 'https://chatbothackathon.s3.eu-west-2.amazonaws.com/index.html';
+    //  window.location.href = 'https://chatbothackathon.s3.eu-west-2.amazonaws.com/index.html';
+    window.location.href = '/script';
   }
 
   showModal = () => {
@@ -153,8 +154,8 @@ export class MainPage extends React.Component {
                             </p>
                             <br />
                             <p>
-                              This is part of the PersuadrTM Premium subscription and powered by 6 years of research
-                              into AI and Behavioural science.
+                              This is part of the Persuadr™ Premium subscription and powered by 6 years of research into
+                              AI and Behavioural science.
                             </p>
                             <br />
                             <p>Are you ready to supercharge Adrian?</p>

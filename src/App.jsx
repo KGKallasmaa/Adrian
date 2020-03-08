@@ -5,6 +5,7 @@ import configureStore from './configureStore';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { MainPage } from './pages/main';
 import { InitalBotcreator } from './pages/inital';
+import { Script } from './pages/script';
 
 const { store, persistor } = configureStore();
 
@@ -12,6 +13,7 @@ const App = () => (
   <Provider store={store}>
     <Router>
       <Switch>
+        <Route exact path="/script" component={Script} />
         <Route exact path="/bot" component={MainPage} />
         <Route exact path="/" component={InitalBotcreator} />
       </Switch>
