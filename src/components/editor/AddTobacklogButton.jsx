@@ -31,4 +31,4 @@ class AddToBacklogButtonClass extends React.Component {
   }
 }
 
-export const AddToBacklogButton = connect(null, {addChunkToList})(AddToBacklogButtonClass);
+export const AddTobacklogButton = connect(null, {addChunkToList})(AddToBacklogButtonClass);

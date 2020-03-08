@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { EditorState, convertFromHTML, ContentState } from 'draft-js';
 import {Editor } from 'react-draft-wysiwyg';
-import { AddToBacklogButton } from "../../components/editor/AddTobacklogButton.js"
+import { AddTobacklogButton } from "./AddTobacklogButton.jsx"
 import Iframe from 'react-iframe';
 
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
@@ -68,7 +68,7 @@ class ControlledEditor extends React.Component {
           {/*wrapperClassName="demo-wrapper"*/}
           {/*editorClassName="demo-editor"*/}
           {/*onEditorStateChange={this.onEditorStateChange}*/}
-          {/*toolbarCustomButtons={[<AddToBacklogButton/>,<UploadPDFButton/>]}*/}
+          {/*toolbarCustomButtons={[<AddTobacklogButton/>,<UploadPDFButton/>]}*/}
           {/*toolbar={{options: []}}*/}
         {/*/>*/}
         {/*<button onClick={this.handleCopy} >Copy</button>*/}
