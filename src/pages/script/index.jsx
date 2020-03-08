@@ -34,12 +34,13 @@ export class Script extends React.Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-12">
-              <h3>You did It! 🎉</h3><br/>
+              <h3>You did It! 🎉</h3>
+              <br />
+              <p>Embed this code in your website to give your customers access to Adrian.</p>
+              <br />
               <p>
-                Embed this code in your website to give your customers access to Adrian.
-              </p><br/>
-              <p>
-                Don’t forget that you can always come back to the Admin console to make changes and access Performance Insights from your Customer Dashboard.
+                Don’t forget that you can always come back to the Admin console to make changes and access Performance
+                Insights from your Customer Dashboard.
               </p>
               <br />
               <span>

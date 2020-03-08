@@ -16,7 +16,10 @@ const initialState = {
       title: 'Is it better to pay off debt or save money?',
       expanded: true,
       children: [
-        { title: '“Pay yourself first,” was the advice from David Chilton’s bestselling book The Wealthy Barber. Building a financial cushion is important. ' },
+        {
+          title:
+            '“Pay yourself first,” was the advice from David Chilton’s bestselling book The Wealthy Barber. Building a financial cushion is important. ',
+        },
         {
           title: 'Do you have extra money left at the end of the month? ',
         },
@@ -30,7 +33,8 @@ const initialState = {
           title: 'The most important strategy here is to set financial goals—both for savings and debt-reduction.',
         },
         {
-          title: 'Once you have a goal, you quickly start to realize that every dollar saved gets you one step closer to that goal. ',
+          title:
+            'Once you have a goal, you quickly start to realize that every dollar saved gets you one step closer to that goal. ',
         },
       ],
     },
@@ -38,10 +42,16 @@ const initialState = {
       title: 'How do I set a debt reduction goal? ',
       expanded: true,
       children: [
-        { title: 'If you’re making the minimum payment on a credit card, see how many months it’ll take you to pay it off and how much interest you’ll pay during that time. '},
-        {title: 'Once you see this number, you might be more motivated to pay this off faster so you can keep the money that would have gone toward interest fees. '},
-        { title: 'Paying off debt is good'}
-        ],
+        {
+          title:
+            'If you’re making the minimum payment on a credit card, see how many months it’ll take you to pay it off and how much interest you’ll pay during that time. ',
+        },
+        {
+          title:
+            'Once you see this number, you might be more motivated to pay this off faster so you can keep the money that would have gone toward interest fees. ',
+        },
+        { title: 'Paying off debt is good' },
+      ],
     },
     {
       title: 'How do I calculate the right amount of debt to pay off each month?',

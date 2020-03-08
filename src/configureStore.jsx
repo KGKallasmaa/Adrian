@@ -7,13 +7,6 @@ import storage from 'redux-persist/lib/storage'; // defaults to localStorage for
 
 export let store;
 
-// function configureStore() {
-//   store = createStore(reducers, applyMiddleware(thunk));
-//   return store
-// }
-//
-// export default configureStore;
-
 const persistConfig = {
   key: 'root',
   storage,

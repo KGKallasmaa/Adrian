@@ -1,13 +1,13 @@
 {
   "name": "adrian",
-  "description": "A chatbot for the masses",
+  "description": "A chatbot for the masses.",
   "version": "0.0.1",
   "private": true,
   "main": "index.jsx",
+  "homepage": "https://adriann.herokuapp.com",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.19.2",
-    "bootstrap": "^4.4.1",
     "draft-js": "^0.11.4",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
