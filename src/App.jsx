@@ -1,20 +1,22 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import configureStore from './configureStore';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { MainPage } from './pages/main';
 import { InitalBotcreator } from './pages/inital';
-import { Bot } from './pages/bot';
 
-const App = () => {
-  return (
+const { store, persistor } = configureStore();
+
+const App = () => (
+  <Provider store={store}>
     <Router>
       <Switch>
-        <Route exact path="/build" component={Bot} />
         <Route exact path="/bot" component={MainPage} />
         <Route exact path="/" component={InitalBotcreator} />
       </Switch>
     </Router>
-  );
-};
+  </Provider>
+);
+
 export default App;

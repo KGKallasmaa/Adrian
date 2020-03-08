@@ -39,7 +39,7 @@ export class MainPage extends React.Component {
       loading: true
     });
     await sleep(3000);
-    window.location.href = '/build';
+    window.location.href = 'https://chatbothackathon.s3.eu-west-2.amazonaws.com/index.html';
   }
 
 
