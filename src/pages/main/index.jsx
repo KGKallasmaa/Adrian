@@ -1,7 +1,7 @@
 import React from 'react';
 import './main.css';
-import AdrianEditor from '../../components/editor';
-import MasterChunk from '../../components/chunks/index';
+import AdrianEditor from '../../components/editor/index.jsx';
+import MasterChunk from '../../components/chunks/index.jsx';
 import 'antd/dist/antd.css';
 
 import { Button, Layout, Menu } from 'antd';
