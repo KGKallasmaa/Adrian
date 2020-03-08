@@ -76,7 +76,7 @@ export class InitalBotcreator extends React.Component {
                     type="text"
                     name="welcome_message"
                     onChange={this.handleChange}
-                    placeholder={'What\'s your welcoming message?'}
+                    placeholder={"What's your welcoming message?"}
                   />
                 </div>
                 <div className="container-login100-form-btn">

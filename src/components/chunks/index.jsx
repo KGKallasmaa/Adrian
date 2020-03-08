@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {selectChunks} from '../../reducers/chunks.reducer'
+import { selectChunks } from '../../reducers/chunks.reducer';
 
 import SortableTree from 'react-sortable-tree';
 import 'react-sortable-tree/style.css';
 
- class MasterChunk extends Component {
+class MasterChunk extends Component {
   constructor(props) {
     super(props);
 
-   if (props.data) {
+    if (props.data) {
       this.state = {
         treeData: props.data,
       };
     }
-
 
     this.handleChange = this.handleChange.bind(this);
   }
@@ -47,16 +46,12 @@ import 'react-sortable-tree/style.css';
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   return {
-    data: selectChunks(state)
-  }
+    data: selectChunks(state),
+  };
 }
 
-const ConnectedChunk = connect(
-  mapStateToProps,
-
-)(MasterChunk);
-
+const ConnectedChunk = connect(mapStateToProps)(MasterChunk);
 
 export default ConnectedChunk;
