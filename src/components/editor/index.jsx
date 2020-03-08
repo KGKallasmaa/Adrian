@@ -76,7 +76,7 @@ class ControlledEditor extends React.Component {
             className="form-control"
             id="basic-url"
             aria-describedby="basic-addon3"
-            value={'https://www.moneyadviceservice.org.uk/en/articles/cash-isas'}
+            value={'https://www.freedom55financial.com/advice/managing-your-money/pay-off-debt-or-save-money.html'}
           />
         </div>
         <button className={'btn btn-primary'} onClick={this.handleCopy} style={{ margin: 10 }}>
@@ -85,7 +85,7 @@ class ControlledEditor extends React.Component {
         {/*<hr />*/}
         <div style={{ border: '2px solid #d2d2d2', background: '#fff' }}>
           <Iframe
-            url="/uk/index.htm"
+            url="/ff55/index.htm"
             width="100%"
             height="550px"
             id="embedDocumentId"
