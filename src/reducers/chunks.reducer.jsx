@@ -9,51 +9,51 @@ const initialState = {
         'Hi! I’m Adrian, I’m the Virtual Assistant connecting you to money management insights from Advisor Inc. 24/7! How can I help?',
     },
     {
-      title: 'I want to build up my savings',
+      title:
+        'Are you looking for a better way to manage your finances? Advisor Inc. can help you explore options for maintaining and growing your wealth.',
+    },
+    {
+      title: 'Is it better to pay off debt or save money?',
       expanded: true,
       children: [
-        { title: 'Work out how much you can afford to save and find out how to set and reach your savings goal.' },
+        { title: '“Pay yourself first,” was the advice from David Chilton’s bestselling book The Wealthy Barber. Building a financial cushion is important. ' },
         {
-          title:
-            'If you save regularly, you’ll quickly find that your savings add up and keep growing. Get into the habit and watch your money turn into more money.',
+          title: 'Do you have extra money left at the end of the month? ',
         },
       ],
     },
     {
-      title: 'What’s the best way to do that?',
+      title: 'Yes, a bit. ',
       expanded: true,
       children: [
         {
-          title:
-            'If you save regularly, you’ll quickly find that your savings add up and keep growing. Get into the habit and watch your money turn into more money.',
+          title: 'The most important strategy here is to set financial goals—both for savings and debt-reduction.',
         },
         {
-          title:
-            'The easiest way to get your savings working for you is to set things up so that you automatically add a little bit each month to your savings.',
-        },
-        {
-          title:
-            'Before you know it, you’ll have built up a solid chunk of savings for example, one way of saving tax-efficiently is through a Cash ISA.',
+          title: 'Once you have a goal, you quickly start to realize that every dollar saved gets you one step closer to that goal. ',
         },
       ],
     },
     {
-      title: 'What’s the benefit of a Cash ISA?',
+      title: 'How do I set a debt reduction goal? ',
       expanded: true,
-      children: [{ title: 'With a Cash ISA you’ll earn tax-free interest on your savings.' }],
+      children: [
+        { title: 'If you’re making the minimum payment on a credit card, see how many months it’ll take you to pay it off and how much interest you’ll pay during that time. '},
+        {title: 'Once you see this number, you might be more motivated to pay this off faster so you can keep the money that would have gone toward interest fees. '},
+        { title: 'Paying off debt is good'}
+        ],
     },
     {
-      title: 'The interest rates seem low, is an ISA worth it?',
+      title: 'How do I calculate the right amount of debt to pay off each month?',
       expanded: true,
       children: [
         {
           title:
-            'You pay no Income Tax on the interest you receive from an ISA and any profits from investments are free of Capital Gains Tax.',
+            'A financial security advisor can help you crunch numbers to ensure you make the right choice for you.',
         },
-        // {title: 'Not all Cash ISAs offer great interest rates. Shop around until you find a good deal.'},
         {
           title:
-            'To figure out the best savings vehicle for you, we’ll need to find out more about you. The next available appointment is tomorrow, March 8th 2020. Can I go ahead and schedule a 15-minute call?',
+            'The next available appointment with one of our advisors is tomorrow, March 9th 2020. Can I go ahead and schedule a 15-minute call? ?',
         },
       ],
     },
