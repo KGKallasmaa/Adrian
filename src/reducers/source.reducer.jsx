@@ -1,13 +1,12 @@
 const ACTIONS = {
-  LOAD_SOURCE: 'LOAD_SOURCE'
-}
+  LOAD_SOURCE: 'LOAD_SOURCE',
+};
 
 const initialState = {
   parsed: null,
 };
 
-function SourceReducer (state = initialState, action) {
-
+function SourceReducer(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
