@@ -12,6 +12,7 @@ export class InitalBotcreator extends React.Component {
     this.state = {
       name: 'Adrian',
       welcome_message: '',
+      how_feel: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -56,7 +57,7 @@ export class InitalBotcreator extends React.Component {
                   <input
                     className="input100"
                     type="text"
-                    name="name"
+                    name="who_are"
                     onChange={this.handleChange}
                     placeholder={'Who are your customers?'}
                   />
@@ -65,9 +66,18 @@ export class InitalBotcreator extends React.Component {
                   <textarea
                     className="input100"
                     type="text"
-                    name="name"
+                    name="action_after"
                     onChange={this.handleChange}
-                    placeholder={'What should your customers do or feel after conversation?'}
+                    placeholder={'What should your customers do after conversation?'}
+                  />
+                </div>
+                <div className="wrap-input100 validate-input">
+                  <textarea
+                    className="input100"
+                    type="text"
+                    name="how_feel"
+                    onChange={this.handleChange}
+                    placeholder={'How do you want customers feel after conversation?'}
                   />
                 </div>
                 <div className="wrap-input100 validate-input">
